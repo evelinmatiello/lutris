@@ -1,0 +1,60 @@
+No path can be generated for DXVK because no version information is available.
+
+Traceback (most recent call last):
+
+  File "/usr/lib/python3/dist-packages/lutris/util/jobs.py", line 30, in target
+    result = self.function(*a, **kw)
+
+  File "/usr/lib/python3/dist-packages/lutris/installer/interpreter.py", line 325, in dispatch
+    return method(params)
+
+  File "/usr/lib/python3/dist-packages/lutris/installer/commands.py", line 434, in task
+    command = task(**data)
+
+  File "/usr/lib/python3/dist-packages/lutris/runners/commands/wine.py", line 460, in winetricks
+    return wineexec(
+
+  File "/usr/lib/python3/dist-packages/lutris/runners/commands/wine.py", line 355, in wineexec
+    baseenv = runner.get_env(disable_runtime=disable_runtime)
+
+  File "/usr/lib/python3/dist-packages/lutris/runners/wine.py", line 1150, in get_env
+    self.dll_overrides.update(dll_manager.get_enabling_dll_overrides())
+
+  File "/usr/lib/python3/dist-packages/lutris/util/wine/dll_manager.py", line 255, in get_enabling_dll_overrides
+    if self.dll_exists(dll):
+
+  File "/usr/lib/python3/dist-packages/lutris/util/wine/dll_manager.py", line 132, in dll_exists
+    return any(system.path_exists(os.path.join(self.path, arch, dll_name + ".dll")) for arch in self.archs.values())
+
+  File "/usr/lib/python3/dist-packages/lutris/util/wine/dll_manager.py", line 132, in <genexpr>
+    return any(system.path_exists(os.path.join(self.path, arch, dll_name + ".dll")) for arch in self.archs.values())
+
+  File "/usr/lib/python3/dist-packages/lutris/util/wine/dll_manager.py", line 90, in path
+    raise RuntimeError(
+
+RuntimeError: No path can be generated for DXVK because no version information is available.
+
+Lutris log:
+[INFO:2025-06-19 17:58:53,991:application]: Starting Lutris 0.5.18
+[INFO:2025-06-19 17:58:54,051:__init__]: Running migration: mess_to_mame
+[INFO:2025-06-19 17:58:54,053:__init__]: Running migration: migrate_hidden_ids
+[INFO:2025-06-19 17:58:54,057:__init__]: Running migration: migrate_steam_appids
+[INFO:2025-06-19 17:58:54,059:__init__]: Running migration: migrate_banners
+[INFO:2025-06-19 17:58:54,060:__init__]: Running migration: retrieve_discord_appids
+[INFO:2025-06-19 17:58:54,062:retrieve_discord_appids]: Updating Games Discord APP ID's
+[INFO:2025-06-19 17:58:54,063:__init__]: Running migration: migrate_sortname
+[INFO:2025-06-19 17:58:54,064:migrate_sortname]: Adding blank sortname field to database
+[INFO:2025-06-19 17:58:54,064:__init__]: Running migration: migrate_hidden_category
+[INFO:2025-06-19 17:58:54,066:migrate_hidden_category]: Moving hidden games to the '.hidden' category
+[ERROR:2025-06-19 17:58:54,172:system]: ['vulkaninfo', '--summary'] command failed: Command '['vulkaninfo', '--summary']' returned non-zero exit status 1.
+[INFO:2025-06-19 17:58:54,192:startup]: "card0" is Intel Corporation 2nd Generation Core Processor Family Integrated Graphics Controller (8086:0116 1043:1652 i915) Driver 23.2.1
+[INFO:2025-06-19 17:59:10,011:interpreter]: Runner wine needs to be installed
+[INFO:2025-06-19 18:32:47,156:file_box]: Download completed
+[INFO:2025-06-19 18:32:47,160:files_box]: All files available
+[INFO:2025-06-19 18:32:47,160:installerwindow]: All files are available, continuing install
+[INFO:2025-06-19 18:32:47,165:installerwindow]: Launching installer commands
+[INFO:2025-06-19 18:32:47,398:wine]: Creating a win64 prefix in /home/evelin/Games/ea-app
+[INFO:2025-06-19 18:32:47,398:wine]: Winepath: /home/evelin/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/bin/wine
+[INFO:2025-06-19 18:32:57,431:wine]: win64 Prefix created in /home/evelin/Games/ea-app
+[ERROR:2025-06-19 18:32:57,806:jobs]: Error while completing task <function ScriptInterpreter._iter_commands.<locals>.dispatch at 0x7fc9f6040670>: <class 'RuntimeError'> No path can be generated for DXVK because no version information is available.
+[ERROR:2025-06-19 18:32:57,819:interpreter]: Last install command failed, show error
